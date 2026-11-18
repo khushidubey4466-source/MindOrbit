@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MindOrbit – Explore Knowledge</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader" class="loader" hidden><div class="spin"></div><p>Charting your galaxy…</p></div>
+<header class="top">
+  <button class="brand" data-view="home" aria-label="MindOrbit home">
+    <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="7" fill="none" stroke="#38bdf8" stroke-width="1.5" transform="rotate(-25 20 20)"/><circle cx="20" cy="20" r="8" fill="#8b5cf6"/><circle cx="33" cy="11" r="3" fill="#38bdf8"/></svg>
+    <span>MindOrbit</span>
+  </button>
+  <nav>
+    <button data-view="home">Home</button>
+    <button data-view="galaxy">Galaxy</button>
+    <button data-view="learning">My Learning</button>
+    <button data-view="create">Add Topic</button>
+  </nav>
+  <button id="theme" class="icon" aria-label="Toggle light or dark mode">🌗</button>
+</header>
+<main>
+  <section id="v-home" class="view">
+    <div class="hero">
+      <h1>Explore Ideas.<br>Connect Knowledge.<br>Discover More.</h1>
+      <form id="searchForm" class="search">
+        <input id="q" type="search" placeholder="What do you want to explore?" aria-label="Search topics" autocomplete="off">
+        <button class="btn">Explore</button>
+      </form>
+      <p id="searchMsg" class="msg" role="alert"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+    <h2>Recently explored</h2><div id="recent" class="chips"></div>
+    <h2>All topics</h2><div id="topics" class="grid"></div>
+  </section>
+  <section id="v-galaxy" class="view">
+    <div class="bar"><div><h2 id="gTitle"></h2><small id="gProg"></small></div>
+      <div><button class="btn ghost" id="resetView">Reset view</button> <button class="btn" id="startQuiz">Start quiz</button></div></div>
+    <div class="stage"><svg id="galaxy" viewBox="0 0 800 600" aria-label="Knowledge galaxy"></svg>
+      <aside id="panel" class="glass panel"></aside></div>
+    <small class="hint">Drag to move · scroll to zoom · click a planet to explore it</small>
+  </section>
+  <section id="v-quiz" class="view"><div id="quizBox" class="glass quiz"></div></section>
+  <section id="v-learning" class="view"><h2>My Learning</h2><div id="learnBox"></div></section>
+  <section id="v-create" class="view">
+    <h2>Add your own topic</h2>
+    <form id="createForm" class="glass form">
+      <label>Topic name<input id="cName" required maxlength="40" placeholder="e.g. Ancient Rome"></label>
+      <label>Concepts (one per line, at least 3)<textarea id="cText" rows="7" required placeholder="Name | Simple explanation | point one; point two"></textarea></label>
+      <p class="msg" id="cMsg" role="alert"></p>
+      <button class="btn">Save topic</button>
+    </form>
+  </section>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MindOrbit – Explore Knowledge</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader" class="loader" hidden><div class="spin"></div><p>Charting your galaxy…</p></div>
+<header class="top">
+  <button class="brand" data-view="home" aria-label="MindOrbit home">
+    <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="7" fill="none" stroke="#38bdf8" stroke-width="1.5" transform="rotate(-25 20 20)"/><circle cx="20" cy="20" r="8" fill="#8b5cf6"/><circle cx="33" cy="11" r="3" fill="#38bdf8"/></svg>
+    <span>MindOrbit</span>
+  </button>
+  <nav>
+    <button data-view="home">Home</button>
+    <button data-view="galaxy">Galaxy</button>
+    <button data-view="learning">My Learning</button>
+    <button data-view="create">Add Topic</button>
+  </nav>
+  <button id="theme" class="icon" aria-label="Toggle light or dark mode">🌗</button>
+</header>
+<main>
+  <section id="v-home" class="view">
+    <div class="hero">
+      <h1>Explore Ideas.<br>Connect Knowledge.<br>Discover More.</h1>
+      <form id="searchForm" class="search">
+        <input id="q" type="search" placeholder="What do you want to explore?" aria-label="Search topics" autocomplete="off">
+        <button class="btn">Explore</button>
+      </form>
+      <p id="searchMsg" class="msg" role="alert"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+    <h2>Recently explored</h2><div id="recent" class="chips"></div>
+    <h2>All topics</h2><div id="topics" class="grid"></div>
+  </section>
+  <section id="v-galaxy" class="view">
+    <div class="bar"><div><h2 id="gTitle"></h2><small id="gProg"></small></div>
+      <div><button class="btn ghost" id="resetView">Reset view</button> <button class="btn" id="startQuiz">Start quiz</button></div></div>
+    <div class="stage"><svg id="galaxy" viewBox="0 0 800 600" aria-label="Knowledge galaxy"></svg>
+      <aside id="panel" class="glass panel"></aside></div>
+    <small class="hint">Drag to move · scroll to zoom · click a planet to explore it</small>
+  </section>
+  <section id="v-quiz" class="view"><div id="quizBox" class="glass quiz"></div></section>
+  <section id="v-learning" class="view"><h2>My Learning</h2><div id="learnBox"></div></section>
+  <section id="v-create" class="view">
+    <h2>Add your own topic</h2>
+    <form id="createForm" class="glass form">
+      <label>Topic name<input id="cName" required maxlength="40" placeholder="e.g. Ancient Rome"></label>
+      <label>Concepts (one per line, at least 3)<textarea id="cText" rows="7" required placeholder="Name | Simple explanation | point one; point two"></textarea></label>
+      <p class="msg" id="cMsg" role="alert"></p>
+      <button class="btn">Save topic</button>
+    </form>
+  </section>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
